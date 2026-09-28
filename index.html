@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ER SOFT — Microsoft Dynamics 365 Business Central Developer & Consultant</title>
+<meta name="description" content="ER SOFT — Business Central / NAV developer and consultant with 10+ years of experience. AL development, implementations, upgrades, integrations. Freelance, contract, full-time or part-time.">
+<link rel="canonical" href="https://ersoft-ks.com/">
+<meta property="og:title" content="ER SOFT — Business Central Developer & Consultant">
+<meta property="og:description" content="10+ years building, upgrading and integrating Microsoft Dynamics 365 Business Central.">
+<meta property="og:url" content="https://ersoft-ks.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --bg-alt:#f5f7f8; --text:#0f172a; --muted:#475569; --line:#e2e8f0;
+    --brand:#0f766e; --brand-2:#14b8a6; --brand-ink:#ffffff; --card:#ffffff;
+    --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0b1220; --bg-alt:#0f1a2b; --text:#e5edf5; --muted:#9fb0c3; --line:#1f2d42;
+      --brand:#2dd4bf; --brand-2:#14b8a6; --brand-ink:#04201d; --card:#111c2e;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;text-decoration:none}
+  .logo-mark{width:34px;height:34px;border-radius:9px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:14px}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+  .nav-links a:hover{color:var(--text)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+  .lang button{border:0;background:transparent;color:var(--muted);font:600 13px Inter,sans-serif;padding:5px 11px;border-radius:999px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+  @media (max-width:720px){ .nav-links a{display:none} }
+  /* hero */
+  .hero{padding:96px 0 80px;background:radial-gradient(1200px 400px at 80% -10%,color-mix(in srgb,var(--brand-2) 18%,transparent),transparent)}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:6px 12px;border-radius:999px;margin-bottom:22px}
+  h1{font-size:clamp(34px,5.4vw,58px);line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;max-width:880px}
+  h1 span{color:var(--brand)}
+  .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:680px;margin:0 0 34px}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;font-size:15px;font-family:inherit}
+  .btn-primary{background:var(--brand);color:var(--brand-ink)}
+  .btn-primary:hover{filter:brightness(1.08)}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:var(--card)}
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:64px;max-width:720px}
+  .stat b{display:block;font-size:30px;letter-spacing:-.02em}
+  .stat span{color:var(--muted);font-size:14px}
+  /* sections */
+  section{padding:88px 0}
+  .alt{background:var(--bg-alt)}
+  .sec-head{max-width:680px;margin-bottom:44px}
+  .sec-head .kicker{color:var(--brand);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+  h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;line-height:1.15;margin:8px 0 12px}
+  .sec-head p{color:var(--muted);margin:0;font-size:17px}
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .card h3{margin:14px 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .ico{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--brand) 12%,transparent);color:var(--brand)}
+  .ico svg{width:22px;height:22px}
+  /* engagement */
+  .engage{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .engage .card h3{margin-top:0}
+  .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--brand);margin-bottom:6px;text-transform:uppercase;letter-spacing:.08em}
+  /* about */
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+  @media (max-width:860px){ .about{grid-template-columns:1fr} }
+  .about p{color:var(--muted);font-size:17px}
+  .checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .checks li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .checks svg{flex:none;width:20px;height:20px;color:var(--brand);margin-top:3px}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .skills span{font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+  /* contact */
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+  @media (max-width:860px){ .contact{grid-template-columns:1fr} }
+  .contact-info a{display:flex;align-items:center;gap:12px;text-decoration:none;padding:12px 0;font-weight:500}
+  .contact-info a:hover{color:var(--brand)}
+  form{display:grid;gap:14px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){ .row{grid-template-columns:1fr} }
+  label{font-size:14px;font-weight:600;display:grid;gap:6px}
+  input,select,textarea{font:inherit;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);width:100%}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:transparent}
+  textarea{min-height:140px;resize:vertical}
+  .hp{position:absolute;left:-9999px}
+  .form-msg{font-size:14px;min-height:22px;margin:0}
+  .form-msg.ok{color:var(--brand)} .form-msg.err{color:#dc2626}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="logo-mark">ER</span>ER SOFT</a>
+    <nav class="nav-links">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#engagement" data-i18n="nav.engage">Work with me</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="sq" aria-pressed="false">SQ</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Microsoft Dynamics 365 Business Central</span>
+      <h1 data-i18n-html="hero.title">Business Central development &amp; consulting that <span>fits your business</span>.</h1>
+      <p class="lead" data-i18n="hero.lead">I help companies implement, extend, upgrade and integrate Dynamics 365 Business Central and NAV — available freelance, on contract, full-time or part-time.</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">Start a conversation</a>
+        <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">See services</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>10+</b><span data-i18n="stats.years">years with NAV &amp; BC</span></div>
+        <div class="stat"><b>AL · C/AL</b><span data-i18n="stats.stack">development</span></div>
+        <div class="stat"><b data-i18n="stats.remote">Remote</b><span data-i18n="stats.where">or on-site</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker" data-i18n="svc.kicker">Services</div>
+        <h2 data-i18n="svc.title">Everything around Business Central</h2>
+        <p data-i18n="svc.lead">From first setup to complex extensions — hands-on development with a consultant's view of the business.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3 data-i18n="s1.t">AL extension development</h3>
+          <p data-i18n="s1.d">Custom tables, pages, codeunits, events and business logic built as clean, upgrade-safe extensions.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <h3 data-i18n="s2.t">Implementation &amp; configuration</h3>
+          <p data-i18n="s2.d">Finance, sales, purchasing, inventory and warehouse set up to match how your company actually works.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+          <h3 data-i18n="s3.t">Upgrades &amp; migrations</h3>
+          <p data-i18n="s3.d">NAV to Business Central, C/AL to AL, on-premises to cloud — with data migration and minimal downtime.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div>
+          <h3 data-i18n="s4.t">Integrations &amp; APIs</h3>
+          <p data-i18n="s4.d">Connect BC with e-commerce, banks, EDI and other systems through APIs, web services, Azure and Power Automate.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3 data-i18n="s5.t">Reports &amp; analytics</h3>
+          <p data-i18n="s5.d">RDLC, Word and Excel layouts, custom documents and Power BI dashboards on top of your BC data.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+          <h3 data-i18n="s6.t">Support, optimization &amp; training</h3>
+          <p data-i18n="s6.d">Troubleshooting, performance tuning, code reviews and training so your team gets the most out of BC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="engagement">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker" data-i18n="eng.kicker">Work with me</div>
+        <h2 data-i18n="eng.title">Flexible ways to engage</h2>
+        <p data-i18n="eng.lead">Pick the model that suits your project, team and budget.</p>
+      </div>
+      <div class="engage">
+        <div class="card"><div class="tag" data-i18n="e1.tag">Project-based</div><h3 data-i18n="e1.t">Freelance</h3><p data-i18n="e1.d">A defined scope — an extension, an integration, an upgrade — delivered end to end.</p></div>
+        <div class="card"><div class="tag" data-i18n="e2.tag">Fixed term</div><h3 data-i18n="e2.t">Contract</h3><p data-i18n="e2.d">Join your team or partner for a set period to cover peaks or specialist needs.</p></div>
+        <div class="card"><div class="tag" data-i18n="e3.tag">Dedicated</div><h3 data-i18n="e3.t">Full-time</h3><p data-i18n="e3.d">A committed BC developer and consultant working as part of your team.</p></div>
+        <div class="card"><div class="tag" data-i18n="e4.tag">Ongoing</div><h3 data-i18n="e4.t">Part-time</h3><p data-i18n="e4.d">Regular hours each week for continuous development, support and improvements.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <div>
+        <div class="sec-head" style="margin-bottom:20px">
+          <div class="kicker" data-i18n="ab.kicker">About</div>
+          <h2 data-i18n="ab.title">Hi, I'm Eron — the person behind ER SOFT</h2>
+        </div>
+        <p data-i18n="ab.p1">For more than 10 years I have been developing and consulting on Microsoft Dynamics NAV and Business Central, from classic C/AL to modern AL extensions and the cloud.</p>
+        <p data-i18n="ab.p2">I work directly with end customers and Microsoft partners, combining solid development with an understanding of finance, operations and processes — so the solution solves the real business problem, not just the ticket.</p>
+        <div class="skills">
+          <span>AL</span><span>C/AL</span><span>Business Central SaaS</span><span>BC On-Premises</span><span>Dynamics NAV</span><span>VS Code</span><span>REST / OData APIs</span><span>Azure</span><span>Power Platform</span><span>Power BI</span><span>SQL Server</span><span>Git / DevOps</span>
+        </div>
+      </div>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="c1">10+ years of hands-on NAV &amp; Business Central experience</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="c2">Developer and functional consultant in one</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="c3">Clean, upgrade-safe, documented code</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="c4">Clear communication in English and Albanian</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="c5">Remote-friendly, working across European time zones</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <div class="sec-head" style="margin-bottom:24px">
+          <div class="kicker" data-i18n="ct.kicker">Contact</div>
+          <h2 data-i18n="ct.title">Let's talk about your project</h2>
+          <p data-i18n="ct.lead">Tell me what you need — I usually reply within one business day.</p>
+        </div>
+        <div class="contact-info">
+          <a href="mailto:contact@ersoft-ks.com"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>contact@ersoft-ks.com</a>
+          <a href="https://www.linkedin.com/in/eron-bylykbashi-9b0543174" target="_blank" rel="noopener" id="linkedin"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></span>LinkedIn</a>
+        </div>
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="row">
+          <label><span data-i18n="f.name">Name</span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="f.email">Email</span><input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <div class="row">
+          <label><span data-i18n="f.company">Company</span><input name="company" autocomplete="organization"></label>
+          <label><span data-i18n="f.type">Engagement</span>
+            <select name="engagement">
+              <option value="Freelance" data-i18n="e1.t">Freelance</option>
+              <option value="Contract" data-i18n="e2.t">Contract</option>
+              <option value="Full-time" data-i18n="e3.t">Full-time</option>
+              <option value="Part-time" data-i18n="e4.t">Part-time</option>
+              <option value="Not sure" data-i18n="f.unsure">Not sure yet</option>
+            </select>
+          </label>
+        </div>
+        <label><span data-i18n="f.msg">Message</span><textarea name="message" required></textarea></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div><button class="btn btn-primary" type="submit" data-i18n="f.send">Send message</button></div>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> ER SOFT · <span data-i18n="ft.loc">Kosovo</span></span>
+    <span data-i18n="ft.tag">Microsoft Dynamics 365 Business Central development &amp; consulting</span>
+  </div>
+</footer>
+
+<script>
+const T = {
+  sq: {
+    "nav.services":"Shërbimet","nav.engage":"Bashkëpunimi","nav.about":"Rreth meje","nav.contact":"Kontakt",
+    "hero.eyebrow":"Microsoft Dynamics 365 Business Central",
+    "hero.title":"Zhvillim dhe konsulencë për Business Central që <span>i përshtatet biznesit tuaj</span>.",
+    "hero.lead":"Ndihmoj kompanitë të implementojnë, zgjerojnë, përditësojnë dhe integrojnë Dynamics 365 Business Central dhe NAV — si freelancer, me kontratë, me orar të plotë ose të pjesshëm.",
+    "hero.cta":"Na kontaktoni","hero.cta2":"Shihni shërbimet",
+    "stats.years":"vite me NAV dhe BC","stats.stack":"zhvillim","stats.remote":"Në distancë","stats.where":"ose në vend",
+    "svc.kicker":"Shërbimet","svc.title":"Gjithçka rreth Business Central",
+    "svc.lead":"Nga konfigurimi i parë deri te zgjerimet komplekse — zhvillim praktik me këndvështrimin e një konsulenti për biznesin.",
+    "s1.t":"Zhvillim i zgjerimeve AL","s1.d":"Tabela, faqe, codeunit-e, evente dhe logjikë biznesi të ndërtuara si zgjerime të pastra dhe të sigurta për përditësime.",
+    "s2.t":"Implementim dhe konfigurim","s2.d":"Financa, shitjet, blerjet, inventari dhe magazina të konfiguruara sipas mënyrës si punon realisht kompania juaj.",
+    "s3.t":"Përditësime dhe migrime","s3.d":"Nga NAV në Business Central, nga C/AL në AL, nga on-premises në cloud — me migrim të të dhënave dhe ndërprerje minimale.",
+    "s4.t":"Integrime dhe API","s4.d":"Lidhni BC me e-commerce, bankat, EDI dhe sisteme të tjera përmes API-ve, web services, Azure dhe Power Automate.",
+    "s5.t":"Raporte dhe analitikë","s5.d":"Layout-e RDLC, Word dhe Excel, dokumente të personalizuara dhe dashboard-e Power BI mbi të dhënat tuaja në BC.",
+    "s6.t":"Mbështetje, optimizim dhe trajnim","s6.d":"Zgjidhje problemesh, optimizim i performancës, rishikim kodi dhe trajnime që ekipi juaj të përfitojë maksimalisht nga BC.",
+    "eng.kicker":"Bashkëpunimi","eng.title":"Mënyra fleksibile bashkëpunimi","eng.lead":"Zgjidhni modelin që i përshtatet projektit, ekipit dhe buxhetit tuaj.",
+    "e1.tag":"Me projekt","e1.t":"Freelance","e1.d":"Një detyrë e përcaktuar — një zgjerim, një integrim, një përditësim — e realizuar nga fillimi deri në fund.",
+    "e2.tag":"Afat i caktuar","e2.t":"Kontratë","e2.d":"Bashkohem me ekipin ose partnerin tuaj për një periudhë të caktuar, për ngarkesa të larta ose nevoja specifike.",
+    "e3.tag":"I dedikuar","e3.t":"Orar i plotë","e3.d":"Një zhvillues dhe konsulent BC i angazhuar plotësisht si pjesë e ekipit tuaj.",
+    "e4.tag":"I vazhdueshëm","e4.t":"Orar i pjesshëm","e4.d":"Orë të rregullta çdo javë për zhvillim, mbështetje dhe përmirësime të vazhdueshme.",
+    "ab.kicker":"Rreth meje","ab.title":"Përshëndetje, jam Eroni — personi pas ER SOFT",
+    "ab.p1":"Për më shumë se 10 vjet zhvilloj dhe ofroj konsulencë për Microsoft Dynamics NAV dhe Business Central, nga C/AL klasik deri te zgjerimet moderne AL dhe cloud-i.",
+    "ab.p2":"Punoj drejtpërdrejt me klientë dhe partnerë të Microsoft-it, duke kombinuar zhvillim të fortë me njohjen e financave, operacioneve dhe proceseve — që zgjidhja të zgjidhë problemin real të biznesit, jo vetëm kërkesën.",
+    "c1":"Mbi 10 vjet përvojë praktike me NAV dhe Business Central","c2":"Zhvillues dhe konsulent funksional njëkohësisht","c3":"Kod i pastër, i dokumentuar dhe i sigurt për përditësime","c4":"Komunikim i qartë në shqip dhe anglisht","c5":"Punë në distancë, në zonat kohore evropiane",
+    "ct.kicker":"Kontakt","ct.title":"Le të flasim për projektin tuaj","ct.lead":"Më tregoni çfarë ju nevojitet — zakonisht përgjigjem brenda një dite pune.",
+    "f.name":"Emri","f.email":"Email","f.company":"Kompania","f.type":"Lloji i bashkëpunimit","f.unsure":"Ende nuk jam i sigurt","f.msg":"Mesazhi","f.send":"Dërgo mesazhin",
+    "f.sending":"Duke dërguar…","f.ok":"Faleminderit! Mesazhi u dërgua — do t'ju kontaktoj së shpejti.","f.err":"Diçka shkoi keq. Ju lutem shkruani direkt në contact@ersoft-ks.com.","f.req":"Ju lutem plotësoni emrin, një email të vlefshëm dhe mesazhin.",
+    "ft.loc":"Kosovë","ft.tag":"Zhvillim dhe konsulencë për Microsoft Dynamics 365 Business Central"
+  },
+  en: {"f.sending":"Sending…","f.ok":"Thank you! Your message was sent — I'll get back to you soon.","f.err":"Something went wrong. Please email contact@ersoft-ks.com directly.","f.req":"Please fill in your name, a valid email and a message."}
+};
+// capture English defaults from the page
+document.querySelectorAll("[data-i18n]").forEach(el=>{T.en[el.dataset.i18n] ??= el.textContent});
+document.querySelectorAll("[data-i18n-html]").forEach(el=>{T.en[el.dataset.i18nHtml] = el.innerHTML});
+let lang = "en";
+function setLang(l){
+  lang = l; document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=T[l][el.dataset.i18n]; if(v) el.textContent=v;});
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{const v=T[l][el.dataset.i18nHtml]; if(v) el.innerHTML=v;});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===l));
+  try{localStorage.setItem("lang",l)}catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+let saved=null; try{saved=localStorage.getItem("lang")}catch(e){}
+setLang(saved || ((navigator.language||"").toLowerCase().startsWith("sq") ? "sq" : "en"));
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// contact form -> FormSubmit (no backend needed)
+const form = document.getElementById("contact-form"), msg = document.getElementById("form-msg");
+form.addEventListener("submit", async e=>{
+  e.preventDefault();
+  const d = Object.fromEntries(new FormData(form));
+  if(d._honey) return;
+  if(!d.name.trim() || !/^\S+@\S+\.\S+$/.test(d.email) || !d.message.trim()){ msg.className="form-msg err"; msg.textContent=T[lang]["f.req"]; return; }
+  const btn = form.querySelector("button"); btn.disabled = true; msg.className="form-msg"; msg.textContent=T[lang]["f.sending"];
+  try{
+    const r = await fetch("https://formsubmit.co/ajax/contact@ersoft-ks.com",{
+      method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body: JSON.stringify({...d, _subject:"New inquiry from ersoft-ks.com — "+d.name, _replyto:d.email, _template:"table", _captcha:"false"})
+    });
+    if(!r.ok) throw 0;
+    form.reset(); msg.className="form-msg ok"; msg.textContent=T[lang]["f.ok"];
+  }catch(err){ msg.className="form-msg err"; msg.textContent=T[lang]["f.err"]; }
+  finally{ btn.disabled=false; }
+});
+</script>
+</body>
+</html>
